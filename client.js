@@ -14,6 +14,9 @@ module.exports = {
     conn.on('connect', () => {
       console.log('Connection established!');
       conn.write('Name: GC');
+      // setInterval(() => {
+      //   conn.write('Move: up');
+      // }, 50);
     });
 
     // so far the data in question is a rude message on death by idling...
