@@ -10,9 +10,11 @@ module.exports = {
     // interpret incoming data as text
     conn.setEncoding("utf8");
 
-    // message output after connecting successfully
+    // actions performed a=upon successful connection
     conn.on('connect', () => {
+      // prints connection message locally
       console.log('Connection established!');
+      // shhows name (initials) above snek avatar
       conn.write('Name: GC');
       // setInterval(() => {
       //   conn.write('Move: up');
