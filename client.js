@@ -14,11 +14,8 @@ module.exports = {
     conn.on('connect', () => {
       // prints connection message locally
       console.log('Connection established!');
-      // shhows name (initials) above snek avatar
+      // shows name (initials) above snek avatar
       conn.write('Name: GC');
-      // setInterval(() => {
-      //   conn.write('Move: up');
-      // }, 50);
     });
 
     // so far the data in question is a rude message on death by idling...
@@ -28,4 +25,4 @@ module.exports = {
 
     return conn;
   }
-}
+};
