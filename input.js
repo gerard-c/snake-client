@@ -4,22 +4,34 @@ let connection;
 
 // function to take in key presses stdin and perform appropriate response
 const handleUserInput = (data) => {
-  // if crtl + c is input, handleUserInput terminates, would otherwise run until the terminal is closed (annoying)
-  if (data === '\u0003') {
-    process.exit();
-  }
+  // switch statement to deal with different keys and their associated actions
+  switch (data) {
   // different inputs corresponding to worm's movements
-  if (data === 'w') {
+  case 'w':
     connection.write('Move: up');
-  }
-  if (data === 'a') {
+    break;
+  case 'a':
     connection.write('Move: left');
-  }
-  if (data === 's') {
+    break;
+  case 's':
     connection.write('Move: down');
-  }
-  if (data === 'd') {
+    break;
+  case 'd':
     connection.write('Move: right');
+    break;
+    // some cheeky canned statements
+  case 'q':
+    connection.write('Say: VROOOOM');
+    break;
+  case 'e':
+    connection.write('Say: NOOOOO');
+    break;
+  case 'r':
+    connection.write('Say: PLEASE');
+    break;
+    // if crtl + c is input, handleUserInput terminates, would otherwise run until the terminal is closed (annoying)
+  case '\u0003':
+    process.exit();
   }
 };
 
