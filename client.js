@@ -13,6 +13,7 @@ module.exports = {
     // message output after connecting successfully
     conn.on('connect', () => {
       console.log('Connection established!');
+      conn.write('Name: GC');
     });
 
     // so far the data in question is a rude message on death by idling...
